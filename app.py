@@ -19,6 +19,14 @@ def index():
                            rating=list(popular_df['avg_rating'].values)
                            )
 
+@app.route('/SignUp')
+def signup():
+    return render_template('signup.html')
+
+@app.route('/LogIn')
+def login():
+    return render_template('signup.html')
+
 @app.route('/recommend')
 def recommend_ui():
     return render_template('recommend.html')

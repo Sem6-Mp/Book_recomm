@@ -1,4 +1,5 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request, session, redirect, url_for
+from flask_pymongo import PyMongo
 import pickle
 import numpy as np
 
@@ -8,6 +9,10 @@ books = pickle.load(open('books.pkl','rb'))
 similarity_scores = pickle.load(open('similarity_scores.pkl','rb'))
 
 app = Flask(__name__)
+
+app.config['MONGO_URI'] = 'mongodb://localhost:27017/signup_bend'
+mongo = PyMongo(app)
+
 
 @app.route('/')
 def index():
@@ -19,12 +24,22 @@ def index():
                            rating=list(popular_df['avg_rating'].values)
                            )
 
-@app.route('/SignUp')
+@app.route('/SignUp', methods= ['GET', 'POST'])
 def signup():
+    if request.method == 'POST':
+        data= request.form
+        mongo.db.record.insert_one(dict(Name = data['name'],Email= data['email'], Password= data['password']))
     return render_template('signup.html')
 
-@app.route('/LogIn')
+@app.route('/LogIn', methods= ['POST','GET'])
 def login():
+    # users = mongo.db.users
+    # login_user = users.find_one({'email': request.form['email']})
+    # bcrypt = {}
+    # if login_user:
+    #     if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password'].encode('utf-8')) == login_user['password'].encode('utf-8'):
+    #         session['email'] = request.form['email']
+    #         return redirect(url_for('index'))
     return render_template('signup.html')
 
 @app.route('/recommend')

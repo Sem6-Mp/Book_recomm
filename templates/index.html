@@ -15,31 +15,47 @@
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
     }
     a {
-    color: greenyellow;
-    transition: background-color 0.5s;
+        color: greenyellow;
+        transition: background-color 0.5s;
     }
 
     a:hover {
-    background-color: rgb(106, 255, 0);
-    border-radius: 10%;
-    color: black;
+        background-color: rgb(106, 255, 0);
+        border-radius: 10%;
+        color: black;
     }
 
-    button {  
+    .login {  
     
-    font-size: 20px;
-    border-radius: 9%;
-    border:  #FF416C;
-    color:  #FF416C;
-    background-color: rgb(0, 0, 0);
-    
-    transition: background-color 0.5s;
+        font-size: 18px;
+        border-radius: 9%;
+        border:  #FF416C;
+        color:  #fbfbfb;
+        background-image: linear-gradient(to right, #df5e87,#1D2671);
+        background-size: 300%;
+        background-position: right ;
+        transition: 500ms background-position ease-in-out ;  
     }
-    button:hover {
-    border:  #FF416C;
-    background-color:  #FF416C;
-    color: rgb(0, 0, 0);
+    .signup {  
     
+        font-size: 18px;
+        border-radius: 9%;
+        border:  #FF416C;
+        color:  #ffffff;
+        background-image: linear-gradient(to right, #00ff8f,#00a1ff);
+        background-size: 300%;
+        background-position: right ;
+        transition: 500ms background-position ease-in-out ;   
+    }
+    .login:hover {
+        color: #000000;
+        background-position: left  ;
+    
+    }
+    .signup:hover{
+        color: #000000  ;
+        background-position: left  ;
+        
     }
 
   
@@ -56,9 +72,9 @@
             <li><a>Contact</a></li>
         </ul>
         <ul>
-            <li><button  onclick="location.href='/SignUp';"   style = "position:absolute; bottom: 25%; right:3%;background-color:  #FF416C;color: rgb(0, 0, 0);" >Sign Up</button></li>
+            <li><button class="signup" onclick="location.href='/SignUp';"   style = "position:absolute; bottom: 25%; right:3%;" >Sign Up</button></li>
             
-            <li><button  onclick="location.href='/LogIn';" style = "position:absolute; bottom: 25%; right:10.25%;">Log in</button></li>
+            <li><button class="login" onclick="location.href='/LogIn';" style = "position:absolute; bottom: 25%; right:10.25%;">Log in</button></li>
 
         </ul>
     </nav>

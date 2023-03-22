@@ -1,13 +1,20 @@
-<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+
+{% if message  %}
+    <div class="alert alert-secondary" role="alert">
+        <p>{{ message }}</p>
+    </div>
+{% endif %}<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Book Recommender System</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
 </head>
 <style>
     .text-white{
@@ -37,14 +44,14 @@
         transition: 500ms background-position ease-in-out ;  
     }
     .signup {  
-    
+        color: #000000  ;
         font-size: 18px;
         border-radius: 9%;
         border:  #FF416C;
-        color:  #ffffff;
+        
         background-image: linear-gradient(to right, #00ff8f,#00a1ff);
         background-size: 300%;
-        background-position: right ;
+        
         transition: 500ms background-position ease-in-out ;   
     }
 
@@ -100,11 +107,16 @@ background: linear-gradient(90deg, rgba(175,6,196,1) 0%, rgb(178, 15, 129) 27%, 
     
     }
     .signup:hover{
-        color: #000000  ;
+        color:  #ffffff;
         background-position: left  ;
+        background-image: linear-gradient(to right, #00a1ff,#00ff8f);
         
     }
-
+    .containerr{
+        width: 27%;
+        float: right;
+        
+    }
   
 
 </style>
@@ -113,7 +125,7 @@ background: linear-gradient(90deg, rgba(175,6,196,1) 0%, rgb(178, 15, 129) 27%, 
     <nav class="navbar" style="background-color:#7a08fd">
         <img src="https://github.com/Sem6-Mp/Book_recomm/blob/main/templates/cartoon-bookworm-vector-removebg-preview.png?raw=true" style="float: left" height="51px" width="55px">
         <label class="navbar-brand" style="color: beige;font-family: cursive;font-size: 25px;">Book Worm</label>
-        <ul class="nav navbar-nav">
+        <ul class=" nav navbar-nav">
             <li><a href="/" >Home</a></li>
             <li><a href="/recommend">Recommend</a></li>
             <li><a>Contact</a></li>
@@ -133,14 +145,13 @@ background: linear-gradient(90deg, rgba(175,6,196,1) 0%, rgb(178, 15, 129) 27%, 
                 </div>
               </div>
          -->
-         <div  class="dropdown">
-            <button style="position: absolute; top: -15px;left: 600px" class="dropbtn">|||</button>
-            <div style="position: absolute; left: 600px" class="dropdown-content">
-                <a class="nav-item nav-link active" href="/register">Register <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="/login">Login</a>
-                <a class="nav-item nav-link" href="/logout">Logout</a>
-            </div>
-          </div>
+         <div class="containerr">
+         <button onclick="window.location.href='/logout'" class="signup"  style="float:right;position: relative;top:10px;left: -15px;">Log out</button>
+         {% block content %}
+         <img style="float: left;" src="https://o.remove.bg/downloads/7875fe5e-d9ca-491c-a914-ddbe22f5049c/OIP-removebg-preview.png" height="50px" width="50px">
+         <p style="float:left;position: relative;top:10px;font-size: large;color: #7a08fd;">_</p><p style="float:left;position: relative;top:10px;font-size: large;color: #fbfbfb;">Hello {{ email[:email.index('@')] }}</p>
+         {% endblock %}
+        </div>
     </nav>
 
     <div class="container">

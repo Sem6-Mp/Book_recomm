@@ -118,6 +118,9 @@ def logout():
     else:
         return render_template('signout.html')
 
+@app.route('/category')
+def categ():
+    return render_template('category.html')
 
 @app.route('/recommend')
 def recommend_ui():

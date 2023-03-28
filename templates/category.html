@@ -6,7 +6,7 @@
   <nav class="navbar" style="background-color:#7a08fd">
       <img src="https://github.com/Sem6-Mp/Book_recomm/blob/main/templates/cartoon-bookworm-vector-removebg-preview.png?raw=true" style="float: left" height="54px" width="57px">
            
-        <label class="navbar-brand" style="text-align: center; position: relative; ;right: 510px; color: beige; font-family: cursive; font-size: 30px;">Book Worm</label>
+        <label class="navbar-brand" style="text-align: center; position: relative; ;right: 525px; color: beige; font-family: cursive; font-size: 30px;">Book Worm</label>
      
 
   </nav>
@@ -20,6 +20,8 @@
     /* Add shadows to create the "card" effect */
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
+        border-radius: 3%;
+        
     }
 
     /* On mouse-over, add a deeper shadow */
@@ -29,14 +31,19 @@
 
     /* Add some padding inside the card container */
     .container {
-        padding: 2px 16px;
+        padding: 2px 100px;
+        width: 80%;
+       float: left;
+       margin-left: 110px;
+       
     }
 
 </style>
 <body >
-
-<div class="container">   
-    <div class="col-md-3" style="margin-top:50px ">
+    
+<div class="container ">   
+    <div class="row">
+        <div class="col-xs-2 col-md-4" style="margin-top:50px ">
         <div class="card">
             <br>
             <div class="card-body">
@@ -51,8 +58,9 @@
             </div>
         </div>
         </div>
-        <br>
-        <div class="col-md-3" style="margin-top:50px;float: right;">
+
+        
+        <div class=" col-xs-4 col-md-4" style="margin-top:50px;">
         <div class="card">
             <br>
             <div class="card-body">
@@ -66,12 +74,12 @@
             </div>
         </div>
     </div>
-        <br>
-        <div class="col-md-3" style="margin-top:50px ">
+
+    <div class=" col-xs-6 col-md-4" style="margin-top:50px ">
         <div class="card">
             <br>
             <div class="card-body">
-                <center><img class="card-img-top" src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781451687590/love-story-9781451687590_hr.jpg" ></center>
+                <center><img class="card-img-top" height="350px" src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781451687590/love-story-9781451687590_hr.jpg" ></center>
             <br>
                 
                 <p style="text-align: center;">Romance</p>
@@ -81,8 +89,12 @@
             </div>
         </div>
     </div>
+        
+    </div>
         <br>
-        <div class="col-md-3" style="margin-top:50px;float: right;">
+        <br>
+    <div class="row">
+        <div class="col-xs-2 col-md-4" style="margin-top:50px;">
         <div class="card">
             <br>
             <div class="card-body">
@@ -97,7 +109,7 @@
         </div>
     </div>
         <br>
-        <div class="col-md-3" style="margin-top:50px ">
+        <div class="col-xs-4 col-md-4" style="margin-top:50px ">
         <div class="card">
             <br>
             <div class="card-body">
@@ -112,7 +124,7 @@
         </div>
     </div>
         <br>
-        <div class="col-md-3" style="margin-top:50px ;float: right;">
+        <div class="col-xs-6 col-md-4" style="margin-top:50px ;">
         <div class="card">
             <br>
             <div class="card-body">
@@ -126,7 +138,7 @@
             </div>
         </div>
     </div>
-
+</div>
 </div>
  
 </body>

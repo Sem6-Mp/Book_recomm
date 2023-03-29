@@ -122,6 +122,10 @@ def logout():
 def categ():
     return render_template('category.html')
 
+@app.route('/about_us')
+def sigmas():
+    return render_template('about_us.html')
+
 @app.route('/recommend')
 def recommend_ui():
     return render_template('recommend.html')

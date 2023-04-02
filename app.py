@@ -5,10 +5,21 @@ import numpy as np
 import bcrypt
 import pymongo
 
+
+
+
+
 popular_df = pickle.load(open('popular.pkl','rb'))
 pt = pickle.load(open('pt.pkl','rb'))
 books = pickle.load(open('books.pkl','rb'))
 similarity_scores = pickle.load(open('similarity_scores.pkl','rb'))
+
+sem6_df = pickle.load(open('new.pkl','rb'))
+sem6_df_rom = pickle.load(open('rom.pkl','rb'))
+sem6_df_ms_tr = pickle.load(open('mystery_triller.pkl','rb'))
+sem6_lit_fic = pickle.load(open('literature_fiction.pkl','rb'))
+sem6_eng =pickle.load(open('engineering.pkl','rb'))
+sem6_manga = pickle.load(open('manga.pkl','rb'))
 
 app = Flask(__name__)
 
@@ -27,6 +38,75 @@ def index():
                            image=list(popular_df['Image-URL-M'].values),
                            votes=list(popular_df['num_ratings'].values),
                            rating=list(popular_df['avg_rating'].values)
+                           )
+
+
+@app.route('/new')
+def neww():
+    return render_template('new.html',
+                           book_name = list(sem6_df['title'].values),
+                           author=list(sem6_df['author'].values),
+                           image=list(sem6_df['image_link'].values),
+                           publisher=list(sem6_df['publisher'].values),
+                           language=list(sem6_df['language'].values),
+                           rating=list(sem6_df['rating'].values)
+                           )
+
+@app.route('/romance')
+def romm():
+    return render_template('romance.html',
+                           book_name = list(sem6_df_rom['title'].values),
+                           author=list(sem6_df_rom['author'].values),
+                           image=list(sem6_df_rom['image_link'].values),
+                           publisher=list(sem6_df_rom['publisher'].values),
+                           language=list(sem6_df_rom['language'].values),
+                           rating=list(sem6_df_rom['rating'].values)
+                           )
+
+
+@app.route('/mystery_triller')
+def mystrs():
+    return render_template('mys_tr.html',
+                           book_name = list(sem6_df_ms_tr['title'].values),
+                           author=list(sem6_df_ms_tr['author'].values),
+                           image=list(sem6_df_ms_tr['image_link'].values),
+                           publisher=list(sem6_df_ms_tr['publisher'].values),
+                           language=list(sem6_df_ms_tr['language'].values),
+                           rating=list(sem6_df_ms_tr['rating'].values)
+                           )
+
+@app.route('/literature_fiction')
+def litfic():
+    return render_template('lit_fic.html',
+                           book_name = list(sem6_lit_fic['title'].values),
+                           author=list(sem6_lit_fic['author'].values),
+                           image=list(sem6_lit_fic['image_link'].values),
+                           publisher=list(sem6_lit_fic['publisher'].values),
+                           language=list(sem6_lit_fic['language'].values),
+                           rating=list(sem6_lit_fic['rating'].values)
+                           )
+
+@app.route('/engineering')
+def engg():
+    return render_template('engine.html',
+                           book_name = list(sem6_eng['title'].values),
+                           author=list(sem6_eng['author'].values),
+                           image=list(sem6_eng['image_link'].values),
+                           publisher=list(sem6_eng['publisher'].values),
+                           language=list(sem6_eng['language'].values),
+                           rating=list(sem6_eng['rating'].values)
+                           )
+
+
+@app.route('/manga')
+def mangg():
+    return render_template('manga.html',
+                           book_name = list(sem6_manga['title'].values),
+                           author=list(sem6_manga['author'].values),
+                           image=list(sem6_manga['image_link'].values),
+                           publisher=list(sem6_manga['publisher'].values),
+                           language=list(sem6_manga['language'].values),
+                           rating=list(sem6_manga['rating'].values)
                            )
 
 @app.route("/register", methods=['post', 'get'])

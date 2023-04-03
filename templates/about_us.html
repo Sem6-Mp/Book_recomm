@@ -14,16 +14,21 @@
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
         </script>
 
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alkatra&family=Cambo&family=Poppins:wght@100&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
 
     <style>
-        body{
+        body {
             background-color: #f9eaff;
         }
-       
+
         .navbar {
             width: 100%;
-            height: 70px;    
+            height: 70px;
 
         }
 
@@ -44,10 +49,10 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
-            
+
         }
 
-       li a:hover{
+        li a:hover {
             background-color: white;
             color: black;
             border-radius: 10%;
@@ -63,15 +68,16 @@
             max-width: fit-content;
             padding-top: 50px;
             padding-bottom: 50px;
-            border-radius: 100px;
-           
+            border-radius: 50px;
+
         }
 
         .paras {
             padding-left: 50px;
             padding-right: 50px;
-            font-weight:600;
+            font-weight: 600;
             font-style: italic;
+            
         }
 
 
@@ -79,25 +85,26 @@
 
         .carousel-inner {
             background-color: aqua;
-            height: 600px;
-            border-radius: 100px;
+            height: 550px;
+            border-radius: 200px;
         }
 
         .card {
             float: left;
             margin: 160px;
-            margin-top: 50px;
+            margin-top: 30px;
+            border-style: solid;
             border-color: black;
-            
 
         }
+
     </style>
 </head>
 
 <body>
 
     <nav class="navbar" style="background-color:#7a08fd">
-        
+
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/recommend">Recommend</a></li>
@@ -105,126 +112,129 @@
             <li><a href="/category">Category Search</a></li>
 
         </ul>
-        
-        
-        
+
+
+
     </nav>
 
     <br>
-    
+
     <header>
         <img src="https://github.com/Sem6-Mp/Book_recomm/blob/main/templates/cartoon-bookworm-vector-removebg-preview.png?raw=true"
-        style="margin-left: 20px; " height="51px" width="55px">
-        <h1 style="text-align: center; float: left; margin-left: 470px; font-family: cursive;">Book Worm</h1>    
-    </header>   
-    <div class="container" style="background-color: rgb(241, 241, 187);">
-                    
-                    <br>
-                    <div class="paras">
-                        <p>
-                            Book Worm   is an online platform that uses recommendation algorithms to
-                            suggest books to
-                            users based on their interests, preferences, and behavior. Users can typically create
-                            profiles and
-                            provide information about their reading habits, such as their favorite authors, genres, and
-                            books they
-                            have read. The website then uses this data to provide personalized book recommendations.
-                        </p>
+            style="margin-left: 20px; " height="51px" width="55px">
+        <h1 style="text-align: center; float: left; margin-left: 510px; font-family: cursive;"><b>Book Worm</b></h1>
+    </header>
+    <br>
+    <div class="container" style="background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);">
 
-                        <p>
-                            This Book recommender website use machine learning models to analyze user data and make
-                            predictions
-                            about which books the user is likely to enjoy. These models can be based on various
-                            techniques, such as
-                            content-based filtering, collaborative filtering, or hybrid approaches.Book recommender
-                            websites can
-                            offer various features and services, such as book reviews, ratings, and user-generated
-                            content. Some
-                            websites may also provide social networking features, such as book clubs or discussion
-                            forums, to help
-                            users connect and share their reading experiences.
-                        </p>
 
-                        <p>
-                            This Book recommender website can be used by various types of users, such as avid readers, book
-                            clubs, or
-                            students looking for books to read for their coursework. They can also be used by
-                            businesses, such as
-                            publishers or online bookstores, to increase engagement and sales.Overall, a book
-                            recommender website
-                            can be a valuable resource for users looking to discover new books and expand their reading
-                            horizons.
+        <div class="paras">
+            <p>
+                Book Worm is an online platform that uses recommendation algorithms to
+                suggest books to
+                users based on their interests, preferences, and behavior. Users can typically create
+                profiles and
+                provide information about their reading habits, such as their favorite authors, genres, and
+                books they
+                have read. The website then uses this data to provide personalized book recommendations.
+            </p>
+
+            <p>
+                This Book recommender website use machine learning models to analyze user data and make
+                predictions
+                about which books the user is likely to enjoy. These models can be based on various
+                techniques, such as
+                content-based filtering, collaborative filtering, or hybrid approaches.Book recommender
+                websites can
+                offer various features and services, such as book reviews, ratings, and user-generated
+                content. Some
+                websites may also provide social networking features, such as book clubs or discussion
+                forums, to help
+                users connect and share their reading experiences.
+            </p>
+
+            <p>
+                This Book recommender website can be used by various types of users, such as avid readers, book
+                clubs, or
+                students looking for books to read for their coursework. They can also be used by
+                businesses, such as
+                publishers or online bookstores, to increase engagement and sales.Overall, a book
+                recommender website
+                can be a valuable resource for users looking to discover new books and expand their reading
+                horizons.
+            </p>
+        </div>
+
+
+    </div>
+
+    <br><br>
+
+
+    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+        <h1 style="font-family: Cambria;"><b>Our Team</b></h1>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active" style="background-image: linear-gradient(#C33764,#1D2671) ">
+                <div class="card" style="width: 18rem; background-color: #0093E9;
+                background-image: linear-gradient(to right,#00c9ff,#92fe9d);">
+                    <img src="https://github.com/Sem6-Mp/Book_recomm/blob/main/templates/images/rohan.jpg?raw=true"
+                        class="card-img-top" height="416px" alt="Rohan's image">
+                    <div class="card-body">
+                        <p class="card-text" style="text-align: center; font-family: 'Alkatra', cursive;"> Chairperson <br>( Mr. Rohan Nashikkar )
                         </p>
                     </div>
+                </div>
 
-
+                <div class="card" style="width: 18rem; background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);">
+                    <img src="images/ruchir.jpg" class="card-img-top" height="420px" alt="Ruchir's image">
+                    <div class="card-body">
+                        <p class="card-text" style="text-align: center; font-family: 'Alkatra', cursive;"> Chief Executive Officer <br>( Mr.
+                            Ruchir Rao ) </p>
                     </div>
+                </div>
+            </div>
 
-                    <br><br>
+
+            <div class="carousel-item"  style="background-image: linear-gradient(#662D8C ,#ED1E79);">
+               
 
 
-                    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-                        <h1>Our Team Member's</h1>
+                <div class="card" style="width: 18rem; background-color: #8EC5FC;
+                background-image: linear-gradient(to right,#ddd6f3,#faaca8)">
+                    <img src="https://github.com/Sem6-Mp/Book_recomm/blob/main/templates/images/aniket.jpg?raw=true"
+                        class="card-img-top" alt="Aniket's image">
+                    <div class="card-body">
+                        <p class="card-text" style="text-align: center; font-family: 'Alkatra', cursive; color: black;"> Chief Financial Officer <br> ( Mr.
+                            Aniket Ojha ) </p>
+                    </div>
+                </div>
 
-                        <div class="carousel-inner">
+                <div class="card" style="width: 18rem; background-image: linear-gradient( to right,#feac5e,#c779d0,#4bc0c8);">
+                    <img src="https://github.com/Sem6-Mp/Book_recomm/blob/main/templates/images/shubham.jpg?raw=true"
+                        class="card-img-top" height="416px" alt="Shubham's image">
+                    <div class="card-body">
+                        <p class="card-text" style="text-align: center; font-family: 'Alkatra', cursive; color: black"> Managing Director <br> ( Mr. Shubham
+                            Sankpal ) </p>
+                    </div>
+                </div>
 
-                            <div class="carousel-item active" style="background-image: linear-gradient(#662D8C ,#ED1E79);">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="https://github.com/Sem6-Mp/Book_recomm/blob/main/templates/images/aniket.jpg?raw=true"  class="card-img-top"
-                                        alt="shubham's image">
-                                    <div class="card-body" ">
-                                        <p class="card-text">Some quick example text to build on the card title and make
-                                            up the bulk of
-                                            the card's content.</p>
-                                    </div>
-                                </div>
-
-                                <div class="card" style="width: 18rem;">
-                                    <img src="https://github.com/Sem6-Mp/Book_recomm/blob/main/templates/images/shubham.jpg?raw=true" class="card-img-top" height="416px" alt="Shubham's image">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make
-                                            up the bulk of
-                                            the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item" style="background-image: linear-gradient(#C33764,#1D2671);">
-                                <div class="card" style="width: 18rem;">
-                                    <img src="https://github.com/Sem6-Mp/Book_recomm/blob/main/templates/images/rohan.jpg?raw=true"
-                                         class="card-img-top" height="416px" alt="Rohan's image">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make
-                                            up the bulk of
-                                            the card's content.</p>
-                                    </div>
-                                </div>
-
-                                <div class="card" style="width: 18rem;">
-                                    <img src="" class="card-img-top" height="416px" alt="Ruchir's image">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make
-                                            up the bulk of
-                                            the card's content.</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- <div class="carousel-item">
+            </div>
+            <!-- <div class="carousel-item">
             <img src="..." class="d-block w-100" alt="...">
           </div> -->
-                        </div>
+        </div>
 
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 </body>
 
 </html>

@@ -144,7 +144,7 @@ def register():
             user_data = records.find_one({"email": email})
             new_email = user_data["email"]
             #if registered redirect to logged in as the registered user
-            return render_template('logged_in.html', email=new_email)
+            return redirect(url_for("logged_in"))
     return render_template('register.html')
 
 @app.route("/login", methods=["POST", "GET"])
@@ -176,7 +176,7 @@ def login():
             return render_template('login.html', message=message)
     return render_template('login.html', message=message)
 
-@app.route('/logged_in')
+@app.route('/logged_in',methods=["POST", "GET"])
 def logged_in():
     if "email" in session:
         email = session["email"]
@@ -201,6 +201,7 @@ def logout():
 @app.route('/category')
 def categ():
     return render_template('category.html')
+
 
 @app.route('/about_us')
 def sigmas():

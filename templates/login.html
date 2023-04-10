@@ -2,17 +2,17 @@
 
 
 
-  <nav class="navbar" style="background-color:#7a08fd">
-      <img src="https://github.com/Sem6-Mp/Book_recomm/blob/main/templates/cartoon-bookworm-vector-removebg-preview.png?raw=true" style="float: left" height="51px" width="55px">
+  <nav class="navbar" style="background-color: #333">
+      <img onclick="window.location.href='/'" src="https://github.com/Sem6-Mp/Book_recomm/blob/main/templates/cartoon-bookworm-vector-removebg-preview.png?raw=true" style="float: left" height="51px" width="55px">
       <label class="navbar-brand" style="color: beige;font-family: cursive;font-size: 25px;">Book Worm</label>
-      <button onclick="window.location.href='/register'" class="text-black btn bg-warning bg-gradien">Sign UP</button>
+      <button onclick="window.location.href='/register'" class="text-black btn bg-warning bg-gradien">Sign Up</button>
   </nav>
   {% if message  %}
     <div class="alert alert-secondary" role="alert">
         <p>{{ message }}</p>
     </div>
 {% endif %}
-<body style="background-color:rgb(249, 234, 255)">
+<body style="background-color:rgb(255, 255, 255)">
 <form class ="container"action="" method="post">
   <div class="form-group">
       <label for="InputEmail">Email address</label>
@@ -23,17 +23,18 @@
       <label for="InputPassword">Password</label>
       <input type="password" name="password" class="form-control" id="InputPassword" placeholder="Password">
   </div>
+  <br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <style>
     .btn-primary{
-      background-color: #7a08fd;
-      border: #7a08fd;
+      background-color: #333;
+      border: #333;
       border-radius: 5%;
       transition: transform 80ms ease-in;
     }
     .btn-primary:hover{
-      background-color: #340070;
+      background-color: #000000;
     }
   </style>
 </body>

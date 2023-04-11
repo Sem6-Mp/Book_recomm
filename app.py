@@ -3,6 +3,7 @@ from flask_pymongo import PyMongo
 import pickle
 import numpy as np
 import bcrypt
+import pandas as pd
 import pymongo
 
 
@@ -216,7 +217,17 @@ def recommend():
     user_input = request.form.get('user_input')
     index = np.where(pt.index == user_input)[0][0]
     similar_items = sorted(list(enumerate(similarity_scores[index])), key=lambda x: x[1], reverse=True)[1:5]
-
+    r_books =  pd.read_csv('books.csv', index_col = "Book-Title")
+    og_book = r_books.loc[str(user_input)]
+    x = og_book['Book-Author']
+    y =  og_book['Image-URL-M']
+    if type(x) is str:
+        og_list = [user_input, x, y]
+    else:
+        og_list = [user_input, x[1], y[1]]
+   
+    
+    data = []
     data = []
     for i in similar_items:
         item = []
@@ -226,6 +237,7 @@ def recommend():
         item.extend(list(temp_df.drop_duplicates('Book-Title')['Image-URL-M'].values))
 
         data.append(item)
+    data.append(og_list)
 
     print(data)
 

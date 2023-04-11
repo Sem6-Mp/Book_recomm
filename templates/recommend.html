@@ -15,19 +15,23 @@
     
 </style>
 <style>
-    body {
-      background-image: url('https://github.com/Sem6-Mp/Book_recomm/blob/main/templates/4-45200_children-boy-reading-book-clipart-png-removebg-preview%201.png?raw=true');
-      background-repeat: no-repeat;
+    .bg-img {
+      background-image: url('https://github.com/Sem6-Mp/Book_recomm/blob/main/templates/images/overlay.png?raw=true');
+      height: 100%; 
       background-position: center;
-      background-position-y: -800%;
-      
-      background-color: black;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+          
     }
 
     .card {
     /* Add shadows to create the "card" effect */
-        box-shadow: 0 3px 8px 0 rgba(255, 255, 255, 0.2);
+        box-shadow: 0 3px 8px 0 rgba(255, 255, 255, 0.177);
         transition: 0.3s;
+        background-color: #e8e8e8;
+        border-radius: 3%;
     }
 
     /* On mouse-over, add a deeper shadow */
@@ -247,13 +251,16 @@
     <div class="container">
         
         <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-white" style="font-size:50px">Recommend Books</h1>
+            <div class="col-md-12 ">
+                <h1 class="text-white" style="font-size:50px;color: #333;"><b>Search for Books</b></h1>
                 <form action="/recommend_books" method="post">
-                    <input name="user_input" type="text" class="form-control"><br>
+                    <input style="box-shadow:0 3px 8px 0 rgb(145, 145, 145);" name="user_input" type="text" class="form-control"><br>
                     <input type="submit" style="color: #000; " class="btn btn-lg btn-warning">
                 </form>
+                
             </div>
+
+            
 
             {% if data %}
 
@@ -262,7 +269,7 @@
                     <div class="card">
                         <div class="card-body">
                             <br>
-                            <center><img class="card-img-top" src="{{i[2]}}">
+                            <center><img class="card-img-top" height="200px" src="{{i[2]}}">
                                 <br><br>
                             <p class="text-white">{{i[0]}}</p>
                             <h4 class="text-white">{{i[1]}}</h4></center>

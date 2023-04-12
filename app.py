@@ -218,6 +218,7 @@ def recommend():
     index = np.where(pt.index == user_input)[0][0]
     similar_items = sorted(list(enumerate(similarity_scores[index])), key=lambda x: x[1], reverse=True)[1:5]
     r_books =  pd.read_csv('books.csv', index_col = "Book-Title")
+    auth_books =  pd.read_csv('books.csv', index_col = "Book-Author")
     og_book = r_books.loc[str(user_input)]
     x = og_book['Book-Author']
     y =  og_book['Image-URL-M']
@@ -226,8 +227,10 @@ def recommend():
     else:
         og_list = [user_input, x[1], y[1]]
    
+    og_auth = auth_books.loc[x]
+    z = og_auth['Book-Title']
+    v =  og_auth['Image-URL-M']
     
-    data = []
     data = []
     for i in similar_items:
         item = []
@@ -238,6 +241,16 @@ def recommend():
 
         data.append(item)
     data.append(og_list)
+
+    for i in range(len(z)):
+        auth_list = []
+        auth_list.append(z[i])
+        if type(x) is str:
+            auth_list.append(x)
+        else:
+            auth_list.append(x[1])
+        auth_list.append(v[i])
+        data.append(auth_list)    
 
     print(data)
 
